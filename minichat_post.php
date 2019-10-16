@@ -30,10 +30,10 @@
 
     <?php
     //affiche les donne envoye par le formulaire
-        $pseudo = $_POST['pseudo'];
+       /*  $pseudo = $_POST['pseudo'];
         echo  $pseudo . '<br>'; 
         $msg = $_POST['message'];
-        echo  $msg;
+        echo  $msg; */
     ?>
 
 <?php
@@ -53,13 +53,42 @@
 
         <?php
 
+
+//$id="";
+$pseudo = $_POST['pseudo'];
+$msg = $_POST['message'];
+
+if(isset($_POST['pseudo']) AND isset($_POST['message'] )){
+ // On ajoute une entrée dans la table minichat
+//$bdd->exec('INSERT INTO `minichat` (`id`, `pseudo`, `msg`) VALUES (NULL, "stef06", "moi ça va !! tu raconte quoi ?")');
+    
+
+//ECRIRE DS LA BDD
+$req = $bdd->prepare('INSERT INTO minichat(id, pseudo, msg) VALUES(:id, :pseudo, :msg)');
+$req->execute(array(
+	'id' => NULL,
+	'pseudo' => $pseudo,
+	'msg' => $msg,
+	
+	));
+
+
+echo 'Le MESSAGE a bien été ajouté !';
+}
+
+
+
+
+
+
+
  // On récupère tout le contenu de la table jeux_video
         $reponse = $bdd->query('SELECT * FROM minichat ');
 
  while ($donnees = $reponse->fetch())
 {
 
-    echo $donnees['id'] . $donnees['pseudo'] . $donnees['message'] ;
+    echo $donnees['id'] . $donnees['pseudo'] . $donnees['msg'] . "<br>";
 }
 
 
