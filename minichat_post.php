@@ -73,6 +73,14 @@ $req->execute(array(
 	));
 
 
+
+
+
+
+
+
+
+
 echo 'Le MESSAGE a bien été ajouté !';
 }
 
@@ -83,7 +91,8 @@ echo 'Le MESSAGE a bien été ajouté !';
 
 
  // On récupère tout le contenu de la table jeux_video
-        $reponse = $bdd->query('SELECT * FROM minichat ');
+       // $reponse = $bdd->query('SELECT * FROM minichat ORDER BY ID DESC LIMIT 0, 5');
+        $reponse = $bdd->query('SELECT * FROM minichat ORDER BY ID DESC LIMIT 0, 5 ') ;
 
  while ($donnees = $reponse->fetch())
 {
