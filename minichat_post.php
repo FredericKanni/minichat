@@ -56,7 +56,7 @@
  // On récupère tout le contenu de la table jeux_video
         $reponse = $bdd->query('SELECT * FROM minichat ');
 
- while ($donnees = $reponse->ftch())
+ while ($donnees = $reponse->fetch())
 {
 
     echo $donnees['id'] . $donnees['pseudo'] . $donnees['message'] ;
