@@ -29,11 +29,50 @@
 
 
     <?php
+    //affiche les donne envoye par le formulaire
         $pseudo = $_POST['pseudo'];
         echo  $pseudo . '<br>'; 
         $msg = $_POST['message'];
         echo  $msg;
     ?>
+
+<?php
+  
+    try
+    {
+            // On se connecte à MySQL
+            $bdd = new PDO('mysql:host=localhost;dbname=mon_site;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    }
+    catch(Exception $e)
+    {
+            // En cas d'erreur, on affiche un message et on arrête tout
+            die('Erreur : '.$e->getMessage());
+    }
+    ?>
+
+
+        <?php
+
+ // On récupère tout le contenu de la table jeux_video
+        $reponse = $bdd->query('SELECT * FROM minichat ');
+
+ while ($donnees = $reponse->ftch())
+{
+
+    echo $donnees['id'] . $donnees['pseudo'] . $donnees['message'] ;
+}
+
+
+
+
+
+        ?>
+
+
+
+
+
+
     
 </body>
 </html>

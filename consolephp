@@ -1,0 +1,6 @@
+CREATE TABLE `mon_site`.`minichat` ( `id` INT NOT NULL AUTO_INCREMENT , `pseudo` VARCHAR(255) NOT NULL , `message` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+Développer Exécuter la requête à nouveau Éditer Expliquer Profilage Signet Base de données : mon_site Daté du : 13:36:10
+SELECT * FROM `minichat`
+INSERT INTO `minichat` (`id`, `pseudo`, `message`) VALUES (NULL, 'matt01', 'salut ça va');
+SELECT * FROM `minichat`
+INSERT INTO `minichat` (`id`, `pseudo`, `message`) VALUES (NULL, 'stef06', 'moi ça va !! tu raconte quoi ?'), (NULL, 'matt01', 'la mm trankil');
