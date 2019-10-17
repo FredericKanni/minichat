@@ -9,11 +9,7 @@
 <body>
 
 
-<?php
-// Effectuer ici la requête qui insère le message
-// Puis rediriger vers minichat.php comme ceci :
-//header('Location: minichat.php');
-?>
+
 
 
 
@@ -81,7 +77,7 @@ $req->execute(array(
 
 
 
-echo 'Le MESSAGE a bien été ajouté !';
+//echo 'Le MESSAGE a bien été ajouté !';
 }
 
 
@@ -92,13 +88,13 @@ echo 'Le MESSAGE a bien été ajouté !';
 
  // On récupère tout le contenu de la table jeux_video
        // $reponse = $bdd->query('SELECT * FROM minichat ORDER BY ID DESC LIMIT 0, 5');
-        $reponse = $bdd->query('SELECT * FROM minichat ORDER BY ID DESC LIMIT 0, 5 ') ;
+ /*        $reponse = $bdd->query('SELECT * FROM minichat ORDER BY ID DESC LIMIT 0, 5 ') ;
 
  while ($donnees = $reponse->fetch())
 {
 
     echo $donnees['id'] . $donnees['pseudo'] . $donnees['msg'] . "<br>";
-}
+} */
 
 
 
@@ -108,7 +104,11 @@ echo 'Le MESSAGE a bien été ajouté !';
 
 
 
-
+<?php
+// Effectuer ici la requête qui insère le message
+// Puis rediriger vers minichat.php comme ceci :
+header('Location: minichat.php');
+?>
 
 
     
